@@ -1,0 +1,48 @@
+﻿@model StajBasvuru2.Models.BasvuruKisisel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BasvuruKisisel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adsoyad" class="control-label"></label>
+                <input asp-for="Adsoyad" class="form-control" />
+                <span asp-validation-for="Adsoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tcno" class="control-label"></label>
+                <input asp-for="Tcno" class="form-control" />
+                <span asp-validation-for="Tcno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telno" class="control-label"></label>
+                <input asp-for="Telno" class="form-control" />
+                <span asp-validation-for="Telno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

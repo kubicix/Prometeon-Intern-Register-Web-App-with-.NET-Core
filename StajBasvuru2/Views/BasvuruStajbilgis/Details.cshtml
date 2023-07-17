@@ -1,0 +1,69 @@
+﻿@model StajBasvuru2.Models.BasvuruStajbilgi
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>BasvuruStajbilgi</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Zorunlustaj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Zorunlustaj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stajtur)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stajtur)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stajsure)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stajsure)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stajsuretipi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stajsuretipi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stajdonem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stajdonem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stajyaptimi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stajyaptimi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TcnoNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TcnoNavigation.Tcno)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Tcno">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

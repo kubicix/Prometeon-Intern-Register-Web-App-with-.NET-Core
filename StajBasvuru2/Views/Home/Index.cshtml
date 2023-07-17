@@ -1,0 +1,453 @@
+﻿<style>
+    body {
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: var(--bs-body-text-align);
+        background: linear-gradient(to top, #FFF, #212B59) !important;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    
+</style>
+@*
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    @model StajBasvuru2.Models.BigViewModel
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="/images/logo.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Prometeon Staj Başvuru Formu</title>
+        <link href="~/css/Basvuru/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+        <link href="~/css/Basvuru/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="~/css/Basvuru/select2.min.css" rel="stylesheet" media="all">
+        <link href="~/css/Basvuru/daterangepicker.css" rel="stylesheet" media="all">
+        <link href="~/css/Basvuru/main.css" rel="stylesheet" media="all">
+        <style>
+            body {
+                margin: 0;
+                font-family: var(--bs-body-font-family);
+                font-size: var(--bs-body-font-size);
+                font-weight: var(--bs-body-font-weight);
+                line-height: var(--bs-body-line-height);
+                color: var(--bs-body-color);
+                text-align: var(--bs-body-text-align);
+                background: linear-gradient(to top, #FFF, #212B59) !important;
+                -webkit-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="logo d-flex justify-content-center">
+            <img src="/images/prometeon.png" alt="Logo" class="img-fluid">
+        </div>
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790 mx-auto">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Prometeon Staj Başvuru Formu</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="myForm1" method="post" asp-action="Create" asp-controller="Complete">
+                            <div class="container">
+                                <div class="form-section text-center">
+                                    <h3 class="font-weight-bold" style="font-weight: 700; padding-bottom: 20px;">Kişisel Bilgiler</h3>
+                                    <div class="form-row">
+                                        <div class="name">Ad Soyad</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" asp-for="Kisisel.Adsoyad" required>
+                                                <span asp-validation-for="Kisisel.Adsoyad" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">TC No</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" asp-for="Kisisel.Tcno" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Telefon No</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" asp-for="Kisisel.Telno"  required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Email</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="email" asp-for="Kisisel.Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-section text-center">
+                                <h3 class="font-weight-bold" style="font-weight: 700; padding-bottom: 20px;">Okul Bilgileri</h3>
+                                <div class="form-row">
+                                    <div class="name">Okul Türü</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <select asp-for="Okul.Okultur" class="form-control" required>
+                                                <option disabled selected>Seçenek</option>
+                                                <option>Lise</option>
+                                                <option>Üniversite</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Okul Adı</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Okul.Okulad" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Bölüm</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Okul.Bolum" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Sınıf</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Okul.Sınıf" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Güncel Not Ortalaması</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Okul.Ortalama" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Not Sistemi</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <select asp-for="Okul.Notsistem" class="form-control" required>
+                                                <option disabled selected>Seçenek</option>
+                                                <option>3 üzerinden</option>
+                                                <option>4 üzerinden</option>
+                                                <option>100 üzerinden</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section text-center">
+                                <h3 class="font-weight-bold" style="font-weight: 700; padding-bottom: 20px;">Staj Bilgileri</h3>
+                                <div class="form-row">
+                                    <div class="name">Zorunlu Stajınız mı?</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <label class="radio-container" style="margin-right: 10px; padding-right: 5px;">
+                                                Evet
+                                                <input type="radio" value="true" asp-for="Staj.Zorunlustaj" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container" style="margin-right: 10px; padding-right: 5px;">
+                                                Hayır
+                                                <input type="radio" value="false" asp-for="Staj.Zorunlustaj" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Staj Türü</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <label class="radio-container" style="text-align: center; margin-right: 5px; padding-right: 5px;">
+                                                Üretim Stajı
+                                                <input type="radio" value="Üretim Stajı" asp-for="Staj.Stajtur" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <br>
+                                            <label class="radio-container" style="text-align: center; margin-right: 5px; padding-right: 5px;">
+                                                Yönetim Stajı
+                                                <input type="radio" value="Yönetim Stajı" asp-for="Staj.Stajtur" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <br>
+                                            <label class="radio-container" style="text-align: center; margin-right: 5px; padding-right: 5px;">
+                                                Diğer
+                                                <input type="radio" id="diger_staj" value="Diğer" asp-for="Staj.Stajtur" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <input class="input--style-5" type="text" placeholder="Diğer ise Staj Türünü Belirtin" asp-for="Staj.Stajtur" >
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Staj Süresi</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" placeholder="Gün" asp-for="Staj.Stajsure" required>
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                İş Günü
+                                                <input type="radio" value="İş Günü" asp-for="Staj.Stajsuretipi" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Takvim Günü
+                                                <input type="radio" value="Takvim Günü" asp-for="Staj.Stajsuretipi" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Staj Dönemi</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <select class="form-control" asp-for="Staj.Stajdonem" required>
+                                                <option disabled selected>Seçenek</option>
+                                                <option>Temmuz Dönemi</option>
+                                                <option>Ağustos Dönemi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Daha Önce Prometeon'da Staj Yaptınız mı?</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Evet
+                                                <input type="radio" value="true" asp-for="Staj.Stajyaptimi" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Hayır
+                                                <input type="radio" value="false" asp-for="Staj.Stajyaptimi" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-section text-center">
+                                <h3 class="font-weight-bold" style="font-weight: 700; padding-bottom: 20px;">Referans Bilgileri</h3>
+                                <div class="form-row">
+                                    <div class="name">Prometeon'da Şu Anda Çalışan Akrabanız Var mı?</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Evet
+                                                <input type="radio" value="true" asp-for="Referans.Calisanakraba" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Hayır
+                                                <input type="radio" value="false" asp-for="Referans.Calisanakraba" required>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="name">Yakınlık Derecesi</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Çocuğu
+                                                <input type="radio" value="Çocuğu" asp-for="Referans.Yakinlikderecesi">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container" style="margin-right: 10px;">
+                                                Kardeşi
+                                                <input type="radio" value="Kardeşi" asp-for="Referans.Yakinlikderecesi">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container">
+                                                Diğer
+                                                <input type="radio" id="refRadio" value="Referans" asp-for="Referans.Yakinlikderecesi">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <input class="input--style-5" type="text" id="other_relationship_degree_input" placeholder="Yakınlık Derecesini Belirtin" asp-for="Referans.Yakinlikderecesi" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="name">Referans Adı Soyadı</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Referans.Referansadsoyad">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Referans Telefonu</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" asp-for="Referans.Referanstelefon">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Referans Email</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="email" asp-for="Referans.Referansemail">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Prometeon'da Çalıştığı Bölüm</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text"  asp-for="Referans.Referansbolum">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container d-flex justify-content-start">
+                                    <input type="checkbox" id="kabul-ediyorum-checkbox" name="kabul-ediyorum" class="form-check-input mr-5" style="margin-right: 10px;" >
+                                    <a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fprometeon-website-assets.s3-eu-west-1.amazonaws.com%2Fuploads%2F646c2b08-47cc-4328-b7f4-e54d9c8a91ef.docx" target="_blank">KVKK&nbsp;</a>
+                                    <label for="kabul-ediyorum-checkbox" class="mr-5">
+                                        ve Kullanıcı Sözleşmesini Okudum ve Kabul Ediyorum
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-section text-center">
+                                <h3 class="font-weight-bold" style="font-weight: 700; padding-bottom: 20px;">Eklemek İstediğiniz Bilgiler</h3>
+                                <div class="form-row">
+                                    <div style="display: flex; justify-content: center;">
+                                        <textarea style="flex-grow: 1; resize: none; width: 630px; max-width: 630px;" asp-for="Referans.Ekstrabilgi" rows="6" maxlength="100"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <button class="btn btn--radius-2 " type="submit" style="background-color: #212B59;">GÖNDER</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/analytics.js/2.9.1/analytics.min.js" integrity="sha512-KwS/w5tBq+G3V7mmQE6rfs1wVz9C63xqcSJgc9n5QDx+nwWc+c5ElomAuBPifOyMRhAWsxMIVjKzLwAtTAYj+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/analytics.js/2.9.1/analytics.js" integrity="sha512-yTSywTFFJ8QrIQWqS0wRmdBc5zu+xkixnT6Db1SATYj9oSabvhS1OOWvZIVegWQyXNg0lkIL5f64GlxCKCEE1w==" crossorigin="anonymous"></script>
+        <script>
+            function submitForm() {
+                var form = $('#myForm1');
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: form.serialize(),
+                    success: function (response) {
+                        console.log('Form gönderildi.');
+                        // Başarılı bir şekilde gönderildiğinde yapılması gereken işlemler
+                        // Örneğin, formun yeniden yüklenmesi veya başka bir sayfaya yönlendirme gibi işlemler
+                    },
+                    error: function (xhr, status, error) {
+                        console.log('Form gönderilirken hata oluştu.');
+                        // Form gönderilirken hata oluştuğunda yapılması gereken işlemler
+                    }
+                });
+            }
+        </script>
+        <script>
+            function toggleOtherInternshipTypeInput() {
+                var otherInput = document.querySelector('input[placeholder="Diğer ise Staj Türünü Belirtin"]');
+                var digerStajRadio = document.getElementById('diger_staj');
+
+                if (digerStajRadio.checked) {
+                    otherInput.removeAttribute('disabled');
+                    otherInput.setAttribute('name', 'Staj.Stajtur');
+
+
+                    
+                } else {
+                    otherInput.setAttribute('disabled', 'disabled');
+                    otherInput.removeAttribute('name');
+                    otherInput.value = '';
+                }
+            }
+
+
+            // Diğer radio butonunun değişiklik olayını dinle
+            var digerStajRadio = document.getElementById('diger_staj');
+            digerStajRadio.addEventListener('change', toggleOtherInternshipTypeInput);
+
+
+
+        </script>
+        <script>
+            var otherRadio = document.getElementById('diger_staj');
+            var otherInput = document.querySelector('input[placeholder="Diğer ise Staj Türünü Belirtin"]');
+
+            otherInput.addEventListener('input', function () {
+                if (otherRadio.checked) {
+                    otherRadio.value = otherInput.value;
+                }
+            });
+        </script>
+
+        <script>
+            function toggleOtherRelationshipDegreeInput() {
+                var otherRelationshipDegreeInput = document.getElementById('other_relationship_degree_input');
+                var digerReferansRadio = document.getElementById('refRadio');
+
+                if (digerReferansRadio.checked) {
+                    otherRelationshipDegreeInput.removeAttribute('disabled');
+                } else {
+                    otherRelationshipDegreeInput.setAttribute('disabled', 'disabled');
+                    otherRelationshipDegreeInput.value = '';
+                }
+            }
+
+            var digerReferansRadio = document.getElementById('refRadio');
+            digerReferansRadio.addEventListener('change', toggleOtherRelationshipDegreeInput);
+        </script>
+        <script>
+            var otherRelationshipDegreeInput = document.getElementById('other_relationship_degree_input');
+            var digerReferansRadio = document.getElementById('refRadio');
+
+            otherRelationshipDegreeInput.addEventListener('input', function () {
+                if (digerReferansRadio.checked) {
+                    digerReferansRadio.value = otherRelationshipDegreeInput.value;
+                }
+            });
+        </script>
+        
+
+    </body>
+    </html>
+}

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<StajBasvuru2.Models.BasvuruStajbilgi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Index</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Zorunlustaj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stajtur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stajsure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stajsuretipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stajdonem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stajyaptimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TcnoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zorunlustaj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stajtur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stajsure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stajsuretipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stajdonem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stajyaptimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TcnoNavigation.Tcno)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Tcno">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Tcno">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Tcno">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

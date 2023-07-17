@@ -1,0 +1,62 @@
+﻿@model StajBasvuru2.Models.BasvuruOkul
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BasvuruOkul</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tcno" class="control-label"></label>
+                <select asp-for="Tcno" class ="form-control" asp-items="ViewBag.Tcno"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Okultur" class="control-label"></label>
+                <input asp-for="Okultur" class="form-control" />
+                <span asp-validation-for="Okultur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Okulad" class="control-label"></label>
+                <input asp-for="Okulad" class="form-control" />
+                <span asp-validation-for="Okulad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bolum" class="control-label"></label>
+                <input asp-for="Bolum" class="form-control" />
+                <span asp-validation-for="Bolum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sınıf" class="control-label"></label>
+                <input asp-for="Sınıf" class="form-control" />
+                <span asp-validation-for="Sınıf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ortalama" class="control-label"></label>
+                <input asp-for="Ortalama" class="form-control" />
+                <span asp-validation-for="Ortalama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notsistem" class="control-label"></label>
+                <input asp-for="Notsistem" class="form-control" />
+                <span asp-validation-for="Notsistem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

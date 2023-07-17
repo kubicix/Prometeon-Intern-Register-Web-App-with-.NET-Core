@@ -19,7 +19,8 @@ This is a web application designed for managing internship applications for Prom
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-![fulleg](https://github.com/kubicix/Prometeon-Intern-Register-Web-App-with-.NET-Core/assets/96316375/fc2fe919-8637-40ff-8690-7568777bc43f)
+![fulleg](https://github.com/kubicix/Prometeon-Intern-Register-Web-App-with-.NET-Core/assets/96316375/819f954a-8122-4d53-bb82-e971e441f08e)
+
 ![Database Diagram](https://github.com/kubicix/Prometeon-Intern-Register-Web-App-with-.NET-Core/assets/96316375/1f2f9289-8202-45ed-92c9-e27033c9b141)
 
 
